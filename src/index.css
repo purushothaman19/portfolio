@@ -1,0 +1,59 @@
+html {
+  height: 100%;
+}
+
+html, body{
+  background: rgb(0, 255, 170);
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  -webkit-animation: fadein 1s ease-out !important;
+  -moz-animation: fadein 2s !important; /* Firefox < 16 */
+  -ms-animation: fadein 2s !important; /* Internet Explorer */
+    -o-animation: fadein 2s !important; /* Opera < 12.1 */
+    animation: fadein 2s !important;
+    height: 100%;
+
+  padding: 5% 15%;
+
+  will-change: transform;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+::selection {
+  color: black;
+  background: rgb(255, 255, 164);
+}
+
+
+::-webkit-scrollbar {
+  width:  5px;
+  height: 2px;
+  border-radius: 999px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #71F6AA;
+  border-radius: 999px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+  border-radius: 999px;
+}

@@ -1,0 +1,93 @@
+
+#skills-section{
+    text-align: center;
+    margin: 5% 0%;
+}
+
+
+h3#skills-h3{
+    font-size: 4vh;
+    font-weight: bold;
+
+}
+
+.uk-list{
+    padding: 15%;
+}
+
+ul.uk-list{
+    text-align: left;
+}
+
+
+ul.uk-list li{
+    background: rgb(2, 255, 255);
+    border-radius: 999px;
+    text-align: center;
+    padding: 4%;
+
+    transition: all 0.5s ease-in-out;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+
+.uk-button-text::before {
+    border-bottom: 4px solid #FEFAA4;
+}
+
+ul.uk-list li:hover{
+
+    opacity: 0.6;
+    
+}
+
+.skills-list{
+    padding: 5% 0%;
+}
+
+.skills-list .uk-card-secondary{
+    text-align: right;
+    padding: 10% !important;
+    height: 100%;
+
+    border-radius: 30px 0px;
+}
+
+
+
+.uk-card-secondary h3 {
+    color: #71F6AA !important;
+    font-weight: 800;
+    transition: all 0.5s;
+    font-size: 2.5vh;
+}
+
+.uk-card-secondary h3:hover {
+    opacity: 0.5;
+}
+
+h3.score{
+    font-size: 5vh;
+}
+
+p.level{
+    font-weight: 700;
+    color: #FEFAA4 !important;
+}
+
+
+@media (max-width: 1199px) {
+
+    p.level{
+        text-align: center;
+    }
+
+}
+
+/* @media (min-width: 640px){
+
+    .uk-child-width-1-1\@s>* {
+        width: 100%;
+    }
+} */

@@ -1,0 +1,17 @@
+
+html{
+  height: 100%;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+}
+
+#root{
+  -webkit-animation: fadein 1s !important; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s !important; /* Firefox < 16 */
+        -ms-animation: fadein 2s !important; /* Internet Explorer */
+         -o-animation: fadein 2s !important; /* Opera < 12.1 */
+            animation: fadein 2s !important;
+}
