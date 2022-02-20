@@ -88,8 +88,8 @@ export default class TopBar extends react.Component {
                     <div className="uk-navbar-right">
     
                         <ul className="uk-navbar-nav">
-                            <li className="uk-active">   <a href="/">   <button className="uk-button uk-button-text"> Works  </button>  </a> </li>
-                            <li className="uk-active">   <a href="/">   <button className="uk-button uk-button-text"> contact  </button>  </a> </li>
+                            <li className="uk-active">   <a href="#works-section">   <button className="uk-button uk-button-text"> Works  </button>  </a> </li>
+                            <li className="uk-active">   <a href="#profile-section">   <button className="uk-button uk-button-text"> contact  </button>  </a> </li>
                         </ul>
     
                     </div>
