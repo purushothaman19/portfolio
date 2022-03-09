@@ -1,98 +1,142 @@
+import React from "react";
+import { ajax } from "jquery";
 import "./Works.css";
+import SubProjects from "./subProjects/SubProjects";
 // import i1 from "./1.png";
 // import i2 from "./2.png";
 
-function Works() {
+export default class Works extends React.Component {
 
-    return (
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: null,
+            isLoaded: false,
+        };
 
-        <section id="works-section">    
+    }
 
-            <h3 id="works-h3"> Projects </h3>
+    componentDidMount() {
+        const context = this;
 
-            <div className="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="true">
+        ajax({
+            url: 'https://folio-data.herokuapp.com/',
+            method: 'GET',
+            success: function (response) {
+                console.log(response);
+                context.setState({
+                    isLoaded: true,
+                    items: response,
+                    game: response.filter((a) => a.tag === 'python' && a.type === 'game'),
+                    turtle: response.filter((a) => a.tag === 'python' && a.type === 'turtle'),
+                    selenium: response.filter((a) => a.tag === 'python' && a.type === 'selenium'),
+                    ds: response.filter((a) => a.tag === 'python' && a.type === 'ds'),
+                    web: response.filter((a) => a.tag === 'python' && a.type === 'web'),
+                    flutter: response.filter((a) => a.tag === 'flutter'),
+                    node: response.filter((a) => a.tag === 'node'),
+                    react: response.filter((a) => a.tag === 'react' ),
+                });
 
-                <ul className="uk-slideshow-items">
-                    <li>
-                        <div className="uk-position-cover" uk-slideshow-parallax="scale: 1.2,1.2,1">
-                        </div>
-                        <div className="uk-position-cover"></div>
-                        <div className="uk-position-center uk-position-medium uk-text-center">
 
-                            <div className="slide-card">
-                                <div className="slide-h3"> <h2 uk-slideshow-parallax="x: 200,0,0"> Exambird </h2> </div>
-                                <div className="slide-p">
-                                    <p uk-slideshow-parallax="x: 400,0,0;"> Online exam creation site. </p>
-                                    <p className="react" uk-slideshow-parallax="x: 400,0,0;"> react </p>
+            }
+        });
 
-                                    <p uk-margin='true'>
-                                        <a className="git-link" href="http://github.com/purushothaman19/ExamBird" target='_blank' > <img alt="" src="https://img.icons8.com/material-outlined/24/000000/github.png"/></a>
-                                        <a className="forward" href="http://exam-bird.netlify.app"target='_blank' > <img alt="" src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/24/000000/external-forward-arrows-kmg-design-glyph-kmg-design.png"/></a>
-                                    </p>
+    }
 
-                                </div>
+    render() {
+
+        const loadingStyle = {
+            'textAlign': 'center',
+            'display': 'block',
+            'color': 'black'
+        }
+        // const t = true
+
+        // console.log(this.state.items);
+
+
+        return (
+            <section id="works-section">
+
+                <h3 id="works-h3"> Projects </h3>
+
+                {this.state.isLoaded === false && this.state.items === null ? <div style={loadingStyle} uk-spinner='true '> </div> :
+
+                    <ul uk-accordion='true'>
+                        <li>
+                            <a className="uk-accordion-title" href="/#"> Node </a>
+                            <div className="uk-accordion-content">
+                                <SubProjects data={this.state.node} />
                             </div>
-
-                        </div>
-                    </li>
-
-                    <li>
-                        <div className="uk-position-cover" uk-slideshow-parallax="scale: 1.2,1.2,1">
-                        </div>
-                        <div className="uk-position-cover"></div>
-                        <div className="uk-position-center uk-position-medium uk-text-center">
-
-                        <div className="slide-card">
-                                <div className="slide-h3"> <h2 uk-slideshow-parallax="x: 200,0,0"> Sweetcups </h2> </div>
-                                <div className="slide-p">
-                                    <p uk-slideshow-parallax="x: 400,0,0;"> Bakery profile website. </p>
-                                    <p className="react" uk-slideshow-parallax="x: 400,0,0;"> react </p>
-
-                                    <p uk-margin='true'>
-                                        <a className="git-link" href="http://github.com/purushg16/sweetcups" target='_blank' > <img alt="" src="https://img.icons8.com/material-outlined/24/000000/github.png"/></a>
-                                        <a className="forward" href="http://sweetcupsbangalore.netlify.app"target='_blank' > <img alt="" src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/24/000000/external-forward-arrows-kmg-design-glyph-kmg-design.png"/></a>
-                                    </p>
-
-                                </div>
+                        </li>
+                        <li>
+                            <a className="uk-accordion-title" href="/#"> React </a>
+                            <div className="uk-accordion-content">
+                                <SubProjects data={this.state.react} />
                             </div>
+                        </li>
+                        <li>
+                            <a className="uk-accordion-title" href="/#"> Python </a>
+                            <div className="uk-accordion-content" style={{ 'padding': '1% 3%' }}>
 
-                        </div>
-                    </li>
+                                <ul uk-accordion='true'>
+                                    <li className="uk-open">
+                                        <a className="uk-accordion-title" href="/#"> Selenium </a>
 
-                    <li>
-                        <div className="uk-position-cover" uk-slideshow-parallax="scale: 1.2,1.2,1">
-                        </div>
-                        <div className="uk-position-cover"></div>
-                        <div className="uk-position-center uk-position-medium uk-text-center">
+                                        <div className="uk-accordion-content">
+                                            <SubProjects data={this.state.selenium} />
+                                        </div>
 
-                        <div className="slide-card">
-                                <div className="slide-h3"> <h2 uk-slideshow-parallax="x: 200,0,0"> Portfolio(minor) </h2> </div>
-                                <div className="slide-p">
-                                    <p uk-slideshow-parallax="x: 400,0,0;"> Portfolio website. </p>
-                                    <p className="react" uk-slideshow-parallax="x: 400,0,0;"> react - node </p>
+                                    </li>
+                                    <li>
+                                        <a className="uk-accordion-title" href="/#"> Data Science </a>
+                                        <div className="uk-accordion-content">
+                                            <SubProjects data={this.state.ds} />
+                                        </div>
 
-                                    <p uk-margin='true'>
-                                        <a className="git-link" href="https://github.com/purushothaman19/Folio" target='_blank' > <img alt="" src="https://img.icons8.com/material-outlined/24/000000/github.png"/></a>
-                                        <a className="forward" href="http://purusholio.herokuapp.com"target='_blank' > <img alt="" src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/24/000000/external-forward-arrows-kmg-design-glyph-kmg-design.png"/></a>
-                                    </p>
+                                    </li>
+                                    <li>
+                                        <a className="uk-accordion-title" href="/#"> Turtle </a>
 
-                                </div>
+                                        <div className="uk-accordion-content">
+                                            <SubProjects data={this.state.turtle} />
+                                        </div>
+
+                                    </li>
+                                    <li>
+
+                                        <a className="uk-accordion-title" href="/#"> Games </a>
+
+                                        <div className="uk-accordion-content">
+                                            <SubProjects data={this.state.game} />
+                                        </div>
+
+                                    </li>
+                                    <li className="uk-open">
+                                        <a className="uk-accordion-title" href="/#"> Web </a>
+
+                                        <div className="uk-accordion-content">
+                                            <SubProjects data={this.state.web} />
+                                        </div>
+
+                                    </li>
+                                </ul>
+
                             </div>
+                        </li>
 
-                        </div>
-                    </li>
-                    
-                </ul>
+                        <li>
+                            <a className="uk-accordion-title" href="/#"> Flutter </a>
+                            <div className="uk-accordion-content">
+                                <SubProjects data={this.state.flutter} />
+                            </div>
+                        </li>
+                    </ul>
 
-                <a className="uk-position-center-left uk-position-small slide-button" href="#" style={{ 'color': 'black' }} uk-slidenav-previous='true' uk-slideshow-item="previous"></a>
-                <a className="uk-position-center-right uk-position-small slide-button" href="#" style={{ 'color': 'black' }} uk-slidenav-next='true' uk-slideshow-item="next"></a>
+                }
 
-            </div>
-        </section>
+            </section>
 
-    );
-
+        )
+    }
 }
-
-
-export default Works

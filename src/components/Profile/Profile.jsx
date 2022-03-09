@@ -44,12 +44,12 @@ function Profile() {
                         </h1>
                         <p id='b-moto' style={{ 'transition': 'all 1s' }}> ~ Maximum Efforts ~ </p>
                         <p uk-margin='true'>
-                            <span className='contact-button' > <button class="uk-button uk-button-text"> <a style={{'textDecoration':'none', color : '#222'}} href='http://github.com/purushothaman19'> github </a> </button> </span>
+                            <span className='contact-button' > <button className="uk-button uk-button-text"> <a style={{'textDecoration':'none', color : '#222'}} href='http://github.com/purushothaman19'> github </a> </button> </span>
                             
-                            <span className='contact-button' > <button class="uk-button uk-button-text"> <a style={{'textDecoration':'none', color : '#222'}} href='mailto:officialpurushothaman@gmail.com'> mail </a> </button> </span>
+                            <span className='contact-button' > <button className="uk-button uk-button-text"> <a style={{'textDecoration':'none', color : '#222'}} href='mailto:officialpurushothaman@gmail.com'> mail </a> </button> </span>
 
                             <CopyToClipboard text="+919976576720">
-                                <span className='contact-button' uk-tooltip={copy} > <button onClick={changeCopyText} class="uk-button uk-button-text"> Phone </button> </span>
+                                <span className='contact-button' uk-tooltip={copy} > <button onClick={changeCopyText} className="uk-button uk-button-text"> Phone </button> </span>
                             </CopyToClipboard>
 
 

@@ -41,3 +41,20 @@ p.react{
     color: #ff4271;
     font-weight: bold;
 }
+
+.uk-accordion-content{
+    padding: 5%;
+}
+
+p#pro-spin{
+    animation: animate__flash;
+    animation-duration: 3s;
+}
+
+.uk-button-rm{
+    position: absolute;
+    bottom: 10px;
+    color:#222222;
+    border-radius: 20px;
+    text-transform: none;
+}

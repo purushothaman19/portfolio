@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 // import { useEffect } from "react";
 import "./skills.css";
 import CountUp from 'react-countup';
@@ -26,7 +26,7 @@ function Skills() {
             </h3>
 
 
-            <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500" className="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-3@l uk-text-center skills-list" uk-grid='true' style={{ 'marginLeft': '0px' }}>
+            <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500;" className="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-3@l uk-text-center skills-list" uk-grid='true' style={{ 'marginLeft': '0px' }}>
 
                 <div>
                     <div className="uk-card uk-card-secondary uk-card-body">
