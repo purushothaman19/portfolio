@@ -19,7 +19,7 @@ class SubProjects extends React.Component {
 
                 const mappedProjects = data.map((project, key) =>
 
-                    <div>
+                    <div className='subProjects'>
                         <div class="uk-card uk-card-secondary uk-card-body">
                             <h3 class="uk-card-title"> {project.title} </h3>
                             <p> {project.desc} </p>
