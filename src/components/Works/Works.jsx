@@ -20,7 +20,7 @@ export default class Works extends React.Component {
         const context = this;
 
         ajax({
-            url: 'https://folio-data.herokuapp.com/',
+            url: 'https://folio-liu2.onrender.com/api',
             method: 'GET',
             success: function (response) {
                 console.log(response);
