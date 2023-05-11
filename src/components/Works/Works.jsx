@@ -24,6 +24,7 @@ export default class Works extends React.Component {
             method: 'GET',
             success: function (response) {
                 console.log(response);
+                response = response['docs'];
                 context.setState({
                     isLoaded: true,
                     items: response,
